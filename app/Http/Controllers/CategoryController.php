@@ -35,9 +35,12 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+   public function store(Request $request)
     {
-        //
+        if ($category = Category::create($request->all())) {
+            return redirect()->back();
+        }
+        return redirect()->back();
     }
 
     /**
