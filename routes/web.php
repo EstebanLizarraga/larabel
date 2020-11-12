@@ -28,9 +28,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/books','BookController@index');
 
-Route::get('/categories', 'CategoryController@index');
+Route::get('/categories','CategoryController@index');
 
-Route::post('/categories', 'CategoryController@store');
+Route::post('/categories','CategoryController@store');
+
+Route::put('/categories', 'CategoryController@update');
+
+Route::delete('/categories/{category}','CategoryController@destroy');
     
  });
 
