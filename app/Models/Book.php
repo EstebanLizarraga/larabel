@@ -7,13 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-     use HasFactory;
-     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
+    use HasFactory;
+
+     protected $fillable = [
         'title',
         'description',
 
@@ -21,13 +17,12 @@ class Book extends Model
         'pages',
         'isbn',
 
-       'editorial',
-       'edition',
+        'editorial',
+        'edition',
 
         'autor',
         'cover',
-
-         'category_id',
         
+        'category_id',
     ];
 }
