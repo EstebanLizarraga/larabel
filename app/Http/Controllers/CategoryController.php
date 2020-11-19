@@ -38,7 +38,10 @@ class CategoryController extends Controller
    public function store(Request $request)
     {
         if ($category = Category::create($request->all())) {
+
             return redirect()->back();
+            
+
         }
         return redirect()->back();
     }
@@ -77,10 +80,11 @@ class CategoryController extends Controller
         $category = Category::find($request->id);
         if ($category) {
             if ($category->update($request->all())) {
-                return redirect()->back();
+
+                return redirect()->back()->with('success',' fue posible crear el registro ');
             }
         }
-        return redirect()->back();
+        return redirect()->back()->with('error','NO fue posible crear el registro');
     }
 
     /**

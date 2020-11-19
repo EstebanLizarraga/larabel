@@ -34,6 +34,38 @@
 
             <!-- Page Content -->
             <main>
+                <section>
+                    <div class="container">
+                        <div class="row"> 
+                             <div class="col">
+                            
+                           @if (session('success'))
+                           <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                             <strong>Holy guacamole!</strong> se a editado de manera exitosa 
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                             </button>
+                             </div>
+                            @endif 
+
+
+                              @if (session('error'))
+                           <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                             <strong>Holy guacamole!</strong> a habido un error
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                             </button>
+                             </div>
+                            @endif 
+
+                           </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
                 {{ $slot }}
             </main>
         </div>
